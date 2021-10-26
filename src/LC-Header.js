@@ -15,6 +15,7 @@ export class LCHeader extends SimpleColors {
   static get properties() {
     return {
       ...super.properties,
+      headername: { type: String, attributes: 'String'},
     };
   }
 
@@ -24,15 +25,14 @@ export class LCHeader extends SimpleColors {
       css`
         :host {
           display: block;
-          background-color: var(--simple-colors-default-theme-accent-8);
-          color: var(--simple-colors-default-theme-grey-1);
+          font-size: 40px;
         }
       `,
     ];
   }
 
   render() {
-    return html`<div>header from lc-header.js<slot></slot></div>`;
+    return html`<div>${this.headername}<slot></slot></div>`;
   }
 }
 customElements.define(LCHeader.tag, LCHeader);

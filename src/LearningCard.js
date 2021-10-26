@@ -79,7 +79,7 @@ export class LearningCard extends LitElement {
       @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap');
       :host {
         display: block;
-        --learning-card-banner-color: #6897bb;
+        /* --learning-card-banner-color: #ffa500; */
         font-family: 'Courier New', Courier, monospace;
       }
       /* this is how you match something on the tag itself like <learning-card type="math"> and then style the img inside */
@@ -91,7 +91,7 @@ export class LearningCard extends LitElement {
         display: inline-flex;
         height: var(--learning-card-height, 150px);
         width: var(--learning-card-width, 150px);
-        background-color: #66ccff;
+        /* background-color: #66ccff; */
       }
 
       /* #iconDiv {
@@ -104,8 +104,8 @@ export class LearningCard extends LitElement {
 
       #full-card {
         border-width: 1px;
-        background-color: red; /*change*/
-        font-family: 'Courier New', Courier, monospace;
+        background-color: #003366; 
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
 
       }
 
@@ -121,7 +121,6 @@ export class LearningCard extends LitElement {
         flex-direction: row;
         border: 1px solid var(--learning-card-banner-color);
         color: #f0f8ff;
-        font-family: 'Courier New', Courier, monospace;
       }
 
       #header {
@@ -135,9 +134,9 @@ export class LearningCard extends LitElement {
 
       #content {
         background-color: white; /*change */
-        border: 1px solid #003366;
+        border: 2px solid #696966;
         border-top: transparent; /*change*/
-        padding-left: 190px;
+        padding-left: 20px;
       }
     `;
   }
@@ -145,16 +144,43 @@ export class LearningCard extends LitElement {
   // HTML - specific to Lit
   render() {
     return html`
+
       <div id="full-card">
         <div id="slot-card">
           <lc-banner></lc-banner>
-          <lc-header></lc-header> //move this to replace h2 tag
+           
           <div id="banner">
             <lc-icon image=${lightbulb}></lc-icon>
             <div id="header">
-              <h2>Header</h2>
+            <lc-header >LEARNING OBJECTIVE</lc-header>
             </div>
           </div>
+
+          <div id="reveal-content" style="display: none;">
+            <ul>
+              <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </li>
+              <li>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
+              <li>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</li>
+            </ul>
+          </div>
+          <button type="button" onclick="document.getElementById('reveal-content').style.display='block'">Reveal</button>
+        </div>
+      </div>
+
+      <br/>
+      <br/>
+
+      <div id="full-card">
+        <div id="slot-card">
+          <lc-banner></lc-banner>
+           
+          <div id="banner">
+            <lc-icon image=${beaker}></lc-icon>
+            <div id="header">
+            <lc-header>CHEM CONNECTION</lc-header>
+            </div>
+          </div>
+
           <div id="content">
             <ul>
               <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </li>
@@ -164,6 +190,31 @@ export class LearningCard extends LitElement {
           </div>
         </div>
       </div>
+
+      <br/>
+      <br/>
+      <div id="full-card">
+        <div id="slot-card">
+          <lc-banner></lc-banner>
+           
+          <div id="banner">
+            <lc-icon image=${question}></lc-icon>
+            <div id="header">
+            <lc-header>DID YOU KNOW?</lc-header>
+            </div>
+          </div>
+
+          <div id="content">
+            <ul>
+              <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </li>
+              <li>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
+              <li>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+
     `;
   }
 

@@ -4,7 +4,7 @@ import { SimpleColors } from '@lrnwebcomponents/simple-colors/simple-colors';
 export class LCBanner extends SimpleColors {
   constructor() {
     super();
-    this.accentColor = 'blue';
+    // this.accentColor = 'blue';
     this.dark = false;
   }
 
@@ -24,7 +24,9 @@ export class LCBanner extends SimpleColors {
       css`
         :host {
           display: block;
-          background-color: var(--simple-colors-default-theme-accent-8);
+          /* background-color: #ffa500; */
+          font-size: 40px;
+          padding-left: 150px;
           color: var(--simple-colors-default-theme-grey-1);
         }
       `,
@@ -34,7 +36,7 @@ export class LCBanner extends SimpleColors {
   render() {
     return html`
       <div>
-        <p>banner from lc-banner.js<span></span></p>
+        <p>UNIT 1<span></span></p>
       </div>
     `;
   }

@@ -18,7 +18,8 @@ export class LCIcon extends SimpleColors {
   static get properties() {
     return {
       ...super.properties,
-      image: { type: String, attribute: 'image' },
+      image: { type: String, attribute: 'image'},
+      color: {type: String, attribute: 'String'}
     };
   }
 
@@ -31,8 +32,7 @@ export class LCIcon extends SimpleColors {
           flex-direction: row;
           height: var(--learning-card-height, 150px);
           width: var(--learning-card-width, 150px);
-          border: 1px dotted cyan;
-          background-color: blue;
+          /* background-color: #ffa500; */
         }
         span {
           display: inline-flex;
@@ -47,7 +47,7 @@ export class LCIcon extends SimpleColors {
 
   render() {
     return html`
-      <div>
+      <div style="background-color: ${this.color}">
         <span><img src="${this.image}" alt="Icon" /></span>
       </div>
     `;
